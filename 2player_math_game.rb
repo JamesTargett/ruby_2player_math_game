@@ -12,15 +12,15 @@ end
 
 def get_answer(op, x, y)
   if op == 1
-    op = " + "
+    op = "+"
   elsif op == 2
-    op = " - "
+    op = "-"
   else
-    op = " x "
+    op = "x"
   end
 
   puts "Player #{@current_player}: What does #{x} #{op} #{y} equal?"
-  answer = gets.chomp
+  gets.chomp
 end
 
 
@@ -72,7 +72,7 @@ loop do
   op = rand(3)
 
   right_answer = calculate_answer(op, x, y)
-  answer = get_answer(op, x, y)
+  answer = get_answer(op, x, y).to_i
 
   check_answer(answer, right_answer)
   switch_player
